@@ -1,0 +1,17 @@
+﻿<Window x:Class="raktarProgram.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:raktarProgram"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="241" Width="296" ResizeMode="CanMinimize">
+    <Grid>
+        <Label Content="Kérem jelentekzzen be!" HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="16" Height="32" VerticalAlignment="Top"/>
+        <TextBox x:Name="usernameBox" Margin="10,64,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="28" FontSize="18" TabIndex="1"/>
+        <Label Content="Felhasználónév" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="Jelszó" HorizontalAlignment="Left" Margin="10,92,0,0" VerticalAlignment="Top" Width="51"/>
+        <Button x:Name="loginBtn" Content="Hitelesítés" Margin="10,164,10,10" TabIndex="3" Click="loginBtn_Click"/>
+        <PasswordBox x:Name="passwdBox" Margin="10,118,10,0" VerticalAlignment="Top" Height="28" FontSize="18" TabIndex="2"/>
+    </Grid>
+</Window>
