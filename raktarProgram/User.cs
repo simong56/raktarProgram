@@ -25,7 +25,7 @@ namespace raktarProgram
                 throw new FileNotFoundException($"CSV file not found: {filePath}");
             }
 
-            var lines = File.ReadAllLines(filePath);
+            var lines = File.ReadAllLines(filePath).Skip(1);
             foreach (var line in lines)
             {
                 if (string.IsNullOrWhiteSpace(line)) continue;

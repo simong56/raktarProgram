@@ -7,39 +7,41 @@ using System.Threading.Tasks;
 
 namespace raktarProgram
 {
-    internal class Product
+    internal class Sale
     {
         public int id { get; set; }
         public string name { get; set; }
-        public int price { get; set; }
-
-        public Product(int id, string name, int price)
+        public string date { get; set; }
+        public int amount { get; set; }
+        public Sale(int id, string name, string date, int amount)
         {
             this.id = id;
             this.name = name;
-            this.price = price;
+            this.date = date;
+            this.amount = amount;
         }
-        public static List<Product> LoadFromCsv(string filePath)
+        public static List<Sale> LoadFromCsv(string filePath)
         {
-            var products = new List<Product>();
+            var sales = new List<Sale>();
             if (!File.Exists(filePath))
             {
                 throw new FileNotFoundException($"CSV file not found: {filePath}");
             }
 
             var lines = File.ReadAllLines(filePath).Skip(1);
-            foreach (var line in lines)
+            foreach(var line in lines)
             {
                 if (string.IsNullOrWhiteSpace(line)) continue;
 
                 var parts = line.Split(',');
                 var id = int.Parse(parts[0].Trim());
                 var name = parts[1].Trim();
-                var price = int.Parse(parts[2].Trim());
+                var date = parts[2].Trim();
+                var amount = int.Parse(parts[3].Trim());
 
-                products.Add(new Product(id, name, price));
+                sales.Add(new Sale(id, name, date, amount));
             }
-            return products;
+            return sales;
         }
     }
 }

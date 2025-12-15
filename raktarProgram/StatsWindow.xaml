@@ -8,6 +8,7 @@
         Title="StatsWindow" Height="395" Width="282" ResizeMode="CanMinimize">
     <Grid>
         <Label Content="Eladások termékenként összesen" Margin="20,10,21,0" FontSize="16" Height="32" VerticalAlignment="Top"/>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,54,0,0"/>
+        <DataGrid x:Name="StatsGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,54,0,0" IsReadOnly="True" Height="295" VerticalAlignment="Top"/>
+        <Button x:Name="RefreshBtn" Content="Frissítés ↻" HorizontalAlignment="Center" Width="282" Click="RefreshBtn_Click" Height="30" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>

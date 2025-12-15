@@ -7,13 +7,13 @@
         mc:Ignorable="d"
         Title="SaleWindow" Height="235" Width="332" ResizeMode="CanMinimize">
     <Grid>
-        <ComboBox Margin="96,18,10,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="ProductSelect" Margin="96,18,10,0" VerticalAlignment="Top"/>
         <Label Content="Termék" HorizontalAlignment="Left" Margin="10,16,0,0" VerticalAlignment="Top" Width="81"/>
-        <DatePicker Margin="96,58,10,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="SaleDatePicker" Margin="96,58,10,0" VerticalAlignment="Top"/>
         <Label Content="Termék" HorizontalAlignment="Left" Margin="10,16,0,0" VerticalAlignment="Top" Width="81"/>
-        <Label Content="Termék" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" Width="81"/>
-        <TextBox Margin="96,96,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="22" FontSize="14"/>
-        <Label Content="Termék" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" Width="81"/>
-        <Button Content="Eladás" Margin="10,138,10,10"/>
+        <Label Content="Dátum" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" Width="81"/>
+        <TextBox x:Name="AmountBox" Margin="96,96,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" FontSize="14" PreviewTextInput="AmountBox_PreviewTextInput"/>
+        <Label Content="Mennyiség" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" Width="81"/>
+        <Button x:Name="SellBtn" Content="Eladás" Margin="10,138,10,10" Click="SellBtn_Click" />
     </Grid>
 </Window>

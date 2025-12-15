@@ -35,7 +35,7 @@
             </Grid>
 
         </GroupBox>
-        <GroupBox Grid.Column="1" Grid.Row="2" Header="Termék törlése" >
+        <GroupBox Grid.Column="1" Header="Termék törlése" Margin="0,199,0,0" Grid.RowSpan="2" >
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="123*"/>
@@ -57,9 +57,9 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="logoutBtn" Grid.Column="0" Content="Kijelentkezés" Height="32" VerticalAlignment="Top" Click="logoutBtn_Click" />
-            <Button x:Name="saleWindowBtn" Grid.Column="1" Content="Eladás" Height="32"/>
-            <Button x:Name="statsWindowBtn" Grid.Column="2" Content="Statisztikák" Height="32"/>
+            <Button x:Name="logoutBtn" Grid.Column="0" Content="Kijelentkezés" Height="32" VerticalAlignment="Top" Click="logoutBtn_Click" RenderTransformOrigin="1.065,17.172" />
+            <Button x:Name="saleWindowBtn" Grid.Column="1" Content="Eladás" Height="32" Click="saleWindowBtn_Click"/>
+            <Button x:Name="statsWindowBtn" Grid.Column="2" Content="Statisztikák" Height="32" Click="statsWindowBtn_Click"/>
         </Grid>
 
     </Grid>

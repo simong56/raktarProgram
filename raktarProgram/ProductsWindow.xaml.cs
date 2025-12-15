@@ -16,6 +16,9 @@ using System.Windows.Shapes;
 
 namespace raktarProgram
 {
+    /// <summary>
+    /// view, add, remove products
+    /// </summary>
     public partial class ProductsWindow : Window
     {
         private List<Product> products = new List<Product>();
@@ -28,13 +31,13 @@ namespace raktarProgram
 
         private void LoadProducts()
         {
-            products = Product.LoadFromCsv("products.csv");
+            products = Product.LoadFromCsv("data/products.csv");
             productsGrid.ItemsSource = products;
         }
 
         private void SaveProducts()
         {
-            using (var sw = new StreamWriter("products.csv", false, Encoding.UTF8))
+            using (var sw = new StreamWriter("data/products.csv", false, Encoding.UTF8))
             {
                 sw.WriteLine("id,name,price");
                 foreach (var p in products.OrderBy(p => p.id))
@@ -78,7 +81,10 @@ namespace raktarProgram
             products.Add(new Product(id, name, price));
             RefreshGrid();
             SaveProducts();
-            ClearInputs();
+
+            newProductIdBox.Clear();
+            newProductNameBox.Clear();
+            newProductPriceBox.Clear();
         }
 
         private void deleteBtn_Click(object sender, RoutedEventArgs e)
@@ -109,11 +115,16 @@ namespace raktarProgram
             productsGrid.ItemsSource = products;
         }
 
-        private void ClearInputs()
+        private void saleWindowBtn_Click(object sender, RoutedEventArgs e)
         {
-            newProductIdBox.Clear();
-            newProductNameBox.Clear();
-            newProductPriceBox.Clear();
+            SaleWindow saleWindow = new SaleWindow();
+            saleWindow.Show();
+        }
+
+        private void statsWindowBtn_Click(object sender, RoutedEventArgs e)
+        {
+            StatsWindow saleWindow = new StatsWindow();
+            saleWindow.Show();
         }
     }
 }

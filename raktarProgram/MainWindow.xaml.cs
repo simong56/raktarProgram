@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace raktarProgram
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// login
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -27,7 +27,7 @@ namespace raktarProgram
 
         private List<User> LoadUsers()
         {
-            string csvFilePath = "users.csv";
+            string csvFilePath = "data/users.csv";
             try
             {
                 List<User> users = User.LoadFromCsv(csvFilePath);
